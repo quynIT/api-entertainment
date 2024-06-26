@@ -1,0 +1,196 @@
+﻿@using BackEnd.Models
+@model BackEnd.Models.AppUser
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/elegant-icons.css" rel="stylesheet" />
+<section class="anime-details spad">
+	<div class="container">
+		<div class="anime__details__content">
+			<div class="row">
+				<div class="col-lg-3">
+
+					<div class="anime__details__pic set-bg">
+						<img src="/Uploads/@(Model.Avtprofile??"avtmacdinh.jpg")" style="width:280px;height:390px;border-radius:15px;" />
+					</div>
+				</div>
+				<div class="col-lg-9" style="margin-top:30px">
+					<div class="login__form">
+						<h3 style="margin-left:50px;">Thông tin cá nhân</h3>
+						<form action="#">
+							<div class="input__item">
+								<input type="text" placeholder="" value="@(Model.FullName ?? "Chưa có dữ liệu name")" readonly>
+								<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							</div>
+							<div class="input__item">
+								<input type="text" placeholder="" value="@(Model.Email ?? "Chưa có Email")" readonly>
+								<span>
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</span>
+							</div>
+							<div class="input__item">
+								<input type="text" value="*********" readonly>
+								<span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+							</div>
+							<div class="input__item">
+								<input type="text" placeholder="" value="@(Model.PhoneNumber ?? " Chưa có số điện thoại")" readonly>
+								<span><i class="fa fa-phone" aria-hidden="true"></i></span>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script src="~/js/jsacount/bootstrap.min.js"></script>
+<script src="~/js/jsacount/jquery-3.3.1.min.js"></script>
+<script src="~/js/jsacount/main.js"></script>
+<style>
+	input[type="text"] {
+		border-radius: 25px;
+	}
+
+	.upload-container {
+		position: relative;
+		width: 100%px;
+	}
+
+	.upload-label {
+		display: inline-block;
+		padding: 10px 15px;
+		background-color: #fff;
+		border: 2px solid #242424;
+		border-radius: 25px;
+		cursor: pointer;
+	}
+
+	.upload-icon {
+		width: 20px; /* Kích thước icon */
+		height: 20px;
+		margin-right: 10px; /* Khoảng cách giữa icon và placeholder */
+	}
+
+	.upload-input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		cursor: pointer;
+	}
+
+	.site-btn {
+		font-size: 13px;
+		color: #ffffff;
+		background: #e53637;
+		font-weight: 700;
+		border: none;
+		border-radius: 10px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		display: inline-block;
+		padding: 12px 30px;
+		justify-content: center;
+	}
+
+	button.site-btn {
+		margin-left: 90px !important;
+		border-radius: 15px !important;
+	}
+
+	.login__form {
+		position: relative;
+		padding-left: 145px;
+	}
+
+		.login__form:after {
+			position: absolute;
+			right: -14px;
+			top: -40px;
+			height: 330px;
+			width: 1px;
+			background: rgba(255, 255, 255, 0.2);
+			content: "";
+		}
+
+		.login__form h3 {
+			color: #ffffff;
+			font-weight: 700;
+			font-family: "Oswald", sans-serif;
+			margin-bottom: 30px;
+		}
+
+		.login__form form .input__item {
+			position: relative;
+			width: 370px;
+			margin-bottom: 20px;
+		}
+
+			.login__form form .input__item:before {
+				position: absolute;
+				left: 50px;
+				top: 10px;
+				height: 30px;
+				width: 1px;
+				background: #b7b7b7;
+				content: "";
+			}
+
+			.login__form form .input__item input {
+				height: 50px;
+				width: 100%;
+				font-size: 15px;
+				color: #b7b7b7;
+				background: #ffffff;
+				border: none;
+				padding-left: 76px;
+			}
+
+				.login__form form .input__item input::-webkit-input-placeholder {
+					color: #b7b7b7;
+				}
+
+				.login__form form .input__item input::-moz-placeholder {
+					color: #b7b7b7;
+				}
+
+				.login__form form .input__item input:-ms-input-placeholder {
+					color: #b7b7b7;
+				}
+
+				.login__form form .input__item input::-ms-input-placeholder {
+					color: #b7b7b7;
+				}
+
+				.login__form form .input__item input::placeholder {
+					color: #b7b7b7;
+				}
+
+			.login__form form .input__item span {
+				color: #b7b7b7;
+				font-size: 20px;
+				position: absolute;
+				left: 15px;
+				top: 13px;
+			}
+
+		.login__form form button {
+			border-radius: 0;
+			margin-top: 10px;
+		}
+
+		.login__form .forget_pass {
+			font-size: 15px;
+			color: #ffffff;
+			display: inline-block;
+			position: absolute;
+			right: 60px;
+			bottom: 12px;
+		}
+
+</style>

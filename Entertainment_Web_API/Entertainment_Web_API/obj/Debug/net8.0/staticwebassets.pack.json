@@ -1,0 +1,521 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Entertainment_Web_API.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Entertainment_Web_API.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\0c14b82c-f6da-4ed4-97e3-a61a85bbbfcc.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\0c14b82c-f6da-4ed4-97e3-a61a85bbbfcc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\1229d1b5-6d05-430f-86cb-99a7c79ba180.png",
+      "PackagePath": "staticwebassets\\Uploads\\1229d1b5-6d05-430f-86cb-99a7c79ba180.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\24c40ce1-11c8-43f1-a31b-9a744fe6a504.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\24c40ce1-11c8-43f1-a31b-9a744fe6a504.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\2b1cf44d-36b9-4984-a3ae-93bc78e6ce5c.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\2b1cf44d-36b9-4984-a3ae-93bc78e6ce5c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\4d71cc8c-fbdd-4acb-ae49-699fc7096aed.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\4d71cc8c-fbdd-4acb-ae49-699fc7096aed.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\5b5d04b0-abd9-41c6-982a-adaafefe80c4.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\5b5d04b0-abd9-41c6-982a-adaafefe80c4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\5bee8242-f861-4af2-8d8b-7e1577ff316c.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\5bee8242-f861-4af2-8d8b-7e1577ff316c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\7a695fbb-cbe4-455a-a2f7-f9c8841eb981.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\7a695fbb-cbe4-455a-a2f7-f9c8841eb981.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\7cefd7ae-1fd8-42e4-a28c-7fa0ce697827.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\7cefd7ae-1fd8-42e4-a28c-7fa0ce697827.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\830860eb-f7b2-4418-8550-ab531a270a75.png",
+      "PackagePath": "staticwebassets\\Uploads\\830860eb-f7b2-4418-8550-ab531a270a75.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\8f46e9f7-f386-4c38-885c-cf643b4908d8.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\8f46e9f7-f386-4c38-885c-cf643b4908d8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\9b48ff9c-0330-4281-b9ea-3553d1256b1d.png",
+      "PackagePath": "staticwebassets\\Uploads\\9b48ff9c-0330-4281-b9ea-3553d1256b1d.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\9f2b755b-caed-4ec2-bba8-5c94dc919d99.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\9f2b755b-caed-4ec2-bba8-5c94dc919d99.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\avtmacdinh.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\avtmacdinh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\c67d240f-d068-4482-bd8a-d1b1b25e91fd.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\c67d240f-d068-4482-bd8a-d1b1b25e91fd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\Uploads\\e93430cd-a999-4e76-8cc6-923efbe85f1f.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\e93430cd-a999-4e76-8cc6-923efbe85f1f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\css\\css music\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\css music\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\css\\css music\\style.css",
+      "PackagePath": "staticwebassets\\css\\css music\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\css\\elegant-icons.css",
+      "PackagePath": "staticwebassets\\css\\elegant-icons.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\css\\stylecustom.css",
+      "PackagePath": "staticwebassets\\css\\stylecustom.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\css\\stylehome.css",
+      "PackagePath": "staticwebassets\\css\\stylehome.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\Home.js",
+      "PackagePath": "staticwebassets\\js\\Home.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\chart.min.js",
+      "PackagePath": "staticwebassets\\js\\chart.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\contact.js",
+      "PackagePath": "staticwebassets\\js\\contact.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\easing.min.js",
+      "PackagePath": "staticwebassets\\js\\easing.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\jqBootstrapValidation.min.js",
+      "PackagePath": "staticwebassets\\js\\jqBootstrapValidation.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\js music\\WaveSurferInit.js",
+      "PackagePath": "staticwebassets\\js\\js music\\WaveSurferInit.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\js music\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\js music\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\js music\\jplayerInit.js",
+      "PackagePath": "staticwebassets\\js\\js music\\jplayerInit.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\js music\\jquery-3.2.1.min.js",
+      "PackagePath": "staticwebassets\\js\\js music\\jquery-3.2.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\js music\\jquery.jplayer.min.js",
+      "PackagePath": "staticwebassets\\js\\js music\\jquery.jplayer.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\js music\\jquery.slicknav.min.js",
+      "PackagePath": "staticwebassets\\js\\js music\\jquery.slicknav.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\js music\\main.js",
+      "PackagePath": "staticwebassets\\js\\js music\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\js music\\mixitup.min.js",
+      "PackagePath": "staticwebassets\\js\\js music\\mixitup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\js music\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\js music\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\js music\\wavesurfer.min.js",
+      "PackagePath": "staticwebassets\\js\\js music\\wavesurfer.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\jsAcount\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\jsAcount\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\jsAcount\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jsAcount\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\jsAcount\\main.js",
+      "PackagePath": "staticwebassets\\js\\jsAcount\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\moment-timezone.min.js",
+      "PackagePath": "staticwebassets\\js\\moment-timezone.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\js\\moment.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\tempusdominus-bootstrap-4.min.js",
+      "PackagePath": "staticwebassets\\js\\tempusdominus-bootstrap-4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\js\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\js\\waypoints.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\back.png",
+      "PackagePath": "staticwebassets\\lib\\back.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\ctctl.jpg",
+      "PackagePath": "staticwebassets\\lib\\ctctl.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\logo.png",
+      "PackagePath": "staticwebassets\\lib\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\mtp.jpg",
+      "PackagePath": "staticwebassets\\lib\\mtp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\next.png",
+      "PackagePath": "staticwebassets\\lib\\next.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\p1.png",
+      "PackagePath": "staticwebassets\\lib\\p1.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\p2.png",
+      "PackagePath": "staticwebassets\\lib\\p2.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\p3.png",
+      "PackagePath": "staticwebassets\\lib\\p3.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\pause.png",
+      "PackagePath": "staticwebassets\\lib\\pause.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\play.png",
+      "PackagePath": "staticwebassets\\lib\\play.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\player-bg.jpg",
+      "PackagePath": "staticwebassets\\lib\\player-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\playlist.png",
+      "PackagePath": "staticwebassets\\lib\\playlist.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\playlist_icon.jpg",
+      "PackagePath": "staticwebassets\\lib\\playlist_icon.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\premium.png",
+      "PackagePath": "staticwebassets\\lib\\premium.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\video.png",
+      "PackagePath": "staticwebassets\\lib\\video.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\lib\\wave-thumb.jpg",
+      "PackagePath": "staticwebassets\\lib\\wave-thumb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\Entertainment_Web_API\\wwwroot\\music\\MTP.mp3",
+      "PackagePath": "staticwebassets\\music\\MTP.mp3"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Entertainment_Web_API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Entertainment_Web_API.props",
+      "PackagePath": "build\\Entertainment_Web_API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Entertainment_Web_API.props",
+      "PackagePath": "buildMultiTargeting\\Entertainment_Web_API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Entertainment_Web_API.props",
+      "PackagePath": "buildTransitive\\Entertainment_Web_API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

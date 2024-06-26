@@ -1,0 +1,26 @@
+.background{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(transparent 0, rgba(160, 157, 157, 0.5) 100%)
+    /* Add other styles as needed */
+}
+.img{
+    justify-content: start;
+    height: 150px;
+    border-radius: 10px;
+    margin-top: 80px;
+   
+    
+}
+.space{
+    margin-top: 100px;
+    margin-bottom: -40px;
+}
+.textarea{
+    padding: 0;
+    margin: 0;
+}
+.icon {
+    width: 50px;
+    height: 50px;
+}

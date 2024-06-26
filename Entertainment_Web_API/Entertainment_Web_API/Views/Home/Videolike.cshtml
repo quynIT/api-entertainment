@@ -1,0 +1,125 @@
+﻿@model List<Video>
+
+@{
+	ViewData["Title"] = "Videolike";
+	Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/css/css music/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/css music/style.css" rel="stylesheet" />
+
+<div class="row" style="margin:15px;">
+	<div class="col-xl-4">
+		<div class="showvideo">
+			<img class="imglike" src="/lib/mtp.jpg" alt="">
+			<div style="margin: 0px 35px 0;">
+				<h2>Liked videos</h2>
+				 <p style="font-weight:700; margin-top:15px;">Your liked videos</p>
+				<p style="font-weight:700;">The views are increasing every day!</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xl-8">
+		@foreach (var video in Model)
+		{
+			<div class="product__sidebar__comment__item__pic">
+				<a href="@Url.Action("Video", "Home", new { videoId = video.VideoId })">
+					<img style="width:220px;height:115px;border-radius:15px;min-width:187px;min-height:126px;" src="@video.ThumbnailUrl" alt="">
+				</a>
+				<div style="margin-left:15px;padding-top:21px;">
+					<h5><a href="@Url.Action("Video", "Home", new { videoId = video.VideoId })" style="color:#fff">@video.Title</a></h5>
+					<div class="ngang">
+						<p>@video.VideoDescription</p>
+						<p>@video.VideoViews views</p>
+						<p>@video.VideoPostingTime</p>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+</div>
+
+@functions {
+	string TimeAgo(DateTimeOffset dateTime)
+	{
+		var timeSpan = DateTimeOffset.Now - dateTime;
+
+		if (timeSpan <= TimeSpan.FromSeconds(60))
+		{
+			return $"{timeSpan.Seconds} second";
+		}
+		else if (timeSpan <= TimeSpan.FromMinutes(60))
+		{
+			return $"{timeSpan.Minutes} minute";
+		}
+		else if (timeSpan <= TimeSpan.FromHours(24))
+		{
+			return $"{timeSpan.Hours} hour";
+		}
+		else if (timeSpan <= TimeSpan.FromDays(30))
+		{
+			return $"{timeSpan.Days} day";
+		}
+		else if (timeSpan <= TimeSpan.FromDays(365))
+		{
+			return $"{Math.Round(timeSpan.Days / 30.0)} month";
+		}
+		else
+		{
+			return $"{Math.Round(timeSpan.Days / 365.0)} year";
+		}
+	}
+}
+
+<script src="~/js/js music/bootstrap.min.js"></script>
+<script src="~/js/js music/jplayerinit.js"></script>
+<script src="~/js/js music/jquery-3.2.1.min.js"></script>
+<script src="~/js/js music/jquery.jplayer.min.js"></script>
+<script src="~/js/js music/jquery.slicknav.min.js"></script>
+<script src="~/js/js music/main.js"></script>
+<script src="~/js/js music/mixitup.min.js"></script>
+<script src="~/js/js music/owl.carousel.min.js"></script>
+<script src="~/js/js music/wavesurfer.min.js"></script>
+<script src="~/js/js music/wavesurferinit.js"></script>
+
+<style>
+	.danhsach li {
+		color: #fff;
+		list-style-type: none;
+		font-size: 14px;
+	}
+
+	.product__sidebar__comment__item__pic {
+		display: flex;
+		margin-bottom: 20px;
+	}
+
+	.ngang {
+		display: flex;
+	}
+
+		.ngang p {
+			margin-right: 17px;
+		}
+
+	.showvideo {
+		background-image: linear-gradient(to bottom, #5c5858, #261515);
+		width: 100%;
+		height: 550px;
+		border-radius: 15px;
+	}
+
+	.imglike {
+		width: 290px;
+		height: 303px;
+		border-radius: 15px;
+		margin: 30px;
+	}
+
+	.nut button {
+		padding: 5px 20px 5px;
+		border-radius: 45px;
+		margin-right: 15px;
+	}
+</style>

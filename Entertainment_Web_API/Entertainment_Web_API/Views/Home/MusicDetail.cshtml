@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "Video";
+	Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/css/css music/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/css music/style.css" rel="stylesheet" />
+<section class="player-section set-bg" data-setbg="@Url.Content("~/lib/ctctl.jpg")">
+	<div class="player-box">
+		<div class="tarck-thumb-warp">
+			<div class="tarck-thumb">
+				<img src="/lib/mtp.jpg" alt="">
+				<button onclick="wavesurfer.playPause();" class="wp-play"></button>
+			</div>
+		</div>
+		<div class="wave-player-warp">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="wave-player-info">
+						<h2>Sơn Tùng</h2>
+						<p>One Night in Ibiza</p>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="songs-links">
+						<a href=""><img src="/lib/p1.png" alt=""></a>
+						<a href=""><img src="/lib/p2.png" alt=""></a>
+						<a href=""><img src="/lib/p3.png" alt=""></a>
+					</div>
+				</div>
+            </div>
+			<div id="wavePlayer" class="clierfix">
+				<div id="audiowave" data-waveurl="@Url.Content("~/music/mtp.mp3")"></div>
+				<div id="currentTime"></div>
+				<div id="clipTime"></div>
+				<!-- Player Controls -->
+				<div class="wavePlayer_controls">
+					<button class="jp-prev player_button" onclick="wavesurfer.skipBackward();"></button>
+					<button class="jp-play player_button" onclick="wavesurfer.playPause();"></button>
+					<button class="jp-next player_button" onclick="wavesurfer.skipForward();"></button>
+					<button class="jp-stop player_button" onclick="wavesurfer.stop();"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script src="~/js/js music/bootstrap.min.js"></script>
+<script src="~/js/js music/jplayerinit.js"></script>
+<script src="~/js/js music/jquery-3.2.1.min.js"></script>
+<script src="~/js/js music/jquery.jplayer.min.js"></script>
+<script src="~/js/js music/jquery.slicknav.min.js"></script>
+<script src="~/js/js music/main.js"></script>
+<script src="~/js/js music/mixitup.min.js"></script>
+<script src="~/js/js music/owl.carousel.min.js"></script>
+<script src="~/js/js music/wavesurfer.min.js"></script>
+<script src="~/js/js music/wavesurferinit.js"></script>
+<style>
+	.danhsach li {
+		color: #fff;
+		list-style-type: none;
+		font-size: 14px;
+	}
+</style>

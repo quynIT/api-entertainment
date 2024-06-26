@@ -1,0 +1,157 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\css\\stylecustom.css",
+      "PackagePath": "staticwebassets\\css\\stylecustom.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\js\\Home.js",
+      "PackagePath": "staticwebassets\\js\\Home.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\js\\contact.js",
+      "PackagePath": "staticwebassets\\js\\contact.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\js\\easing.min.js",
+      "PackagePath": "staticwebassets\\js\\easing.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\js\\jqBootstrapValidation.min.js",
+      "PackagePath": "staticwebassets\\js\\jqBootstrapValidation.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\js\\moment-timezone.min.js",
+      "PackagePath": "staticwebassets\\js\\moment-timezone.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\js\\moment.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\js\\tempusdominus-bootstrap-4.min.js",
+      "PackagePath": "staticwebassets\\js\\tempusdominus-bootstrap-4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\js\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\js\\waypoints.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\source\\Project\\Entertainment_Web\\Entertainment_Web_API\\BackEnd\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BackEnd.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BackEnd.props",
+      "PackagePath": "build\\BackEnd.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BackEnd.props",
+      "PackagePath": "buildMultiTargeting\\BackEnd.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BackEnd.props",
+      "PackagePath": "buildTransitive\\BackEnd.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

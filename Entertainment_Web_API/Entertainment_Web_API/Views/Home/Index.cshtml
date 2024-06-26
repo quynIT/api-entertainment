@@ -1,0 +1,173 @@
+﻿@using Entertainment_Web_API.Models
+@model PaginatedList<Video>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="~/css/owl.carousel.min.css" rel="stylesheet" />
+<link href="~/css/stylehome.css" rel="stylesheet" />
+
+<!-- Form tìm kiếm -->
+<form class="d-none d-md-flex ms-4" method="get" action="@Url.Action("Index", "Home")">
+    <input class="form-control bg-dark border-0" type="search" placeholder="Search video" name="searchTerm" value="@ViewBag.SearchTerm">
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+<div class="container-fluid pt-5 pb-3">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3" style="background:#000000 !important;">Video list</span></h2>
+    <div class="row px-xl-5">
+        @foreach (var video in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="@video.ThumbnailUrl" alt="">
+                        <div class="product-action">
+                            <a class="btn btn-outline-dark btn-square" href="@Url.Action("Video", "Home", new { videoId = video.VideoId })"><i class="fa fa-play-circle"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <a class="h6 text-decoration-none text-truncate" href="@Url.Action("Video", "Home", new { videoId = video.VideoId })">@video.Title</a>
+                        <div class="ngang">
+                            <i class="bi bi-clock"> @TimeAgo(video.VideoPostingTime.GetValueOrDefault())</i>
+                            <i class="fa fa-eye" aria-hidden="true">  @video.VideoViews</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="pagination">
+        @if (Model.HasPreviousPage)
+        {
+            <a href="@Url.Action("Index", "Home", new { searchTerm = Model.SearchTerm, pageNumber = Model.PageIndex - 1 })">Previous</a>
+        }
+
+        @for (var i = 1; i <= Model.TotalPages; i++)
+        {
+            if (i == Model.PageIndex)
+            {
+                <span>@i</span>
+            }
+            else
+            {
+                <a href="@Url.Action("Index", "Home", new { searchTerm = Model.SearchTerm, pageNumber = i })">@i</a>
+            }
+        }
+
+        @if (Model.HasNextPage)
+        {
+            <a href="@Url.Action("Index", "Home", new { searchTerm = Model.SearchTerm, pageNumber = Model.PageIndex + 1 })">Next</a>
+        }
+    </div>
+</div>
+
+@functions {
+    string TimeAgo(DateTimeOffset dateTime)
+    {
+        var timeSpan = DateTimeOffset.Now - dateTime;
+
+        if (timeSpan <= TimeSpan.FromSeconds(60))
+        {
+            return $"{timeSpan.Seconds} second";
+        }
+        else if (timeSpan <= TimeSpan.FromMinutes(60))
+        {
+            return $"{timeSpan.Minutes} minute";
+        }
+        else if (timeSpan <= TimeSpan.FromHours(24))
+        {
+            return $"{timeSpan.Hours} hour";
+        }
+        else if (timeSpan <= TimeSpan.FromDays(30))
+        {
+            return $"{timeSpan.Days} day";
+        }
+        else if (timeSpan <= TimeSpan.FromDays(365))
+        {
+            return $"{Math.Round(timeSpan.Days / 30.0)} month";
+        }
+        else
+        {
+            return $"{Math.Round(timeSpan.Days / 365.0)} year";
+        }
+    }
+}
+
+<style>
+    button.btn.btn-primary {
+        font-weight: 700;
+        border-radius: 10px;
+        width: 130px;
+        margin-right: 50px;
+    }
+
+    input.form-control.bg-dark.border-0 {
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 10px 60px;
+        border: 1px solid #fff !important;
+        margin-right: 60px;
+    }
+
+    .text-center.py-4 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .text-decoration-none {
+        text-decoration: none !important;
+        word-wrap: break-word;
+        max-height: 51px !important;
+        text-overflow: ellipsis;
+    }
+
+    .ngang {
+        display: flex;
+    }
+
+    i.fa.fa-eye {
+        margin: 11px 12px;
+    }
+
+    i.bi.bi-clock {
+        margin: 7px 15px;
+    }
+
+    .product-action {
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    .product-img.position-relative.overflow-hidden {
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .pagination a {
+        color: white;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+    }
+
+    .pagination a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+        color: black;
+    }
+</style>
+
+<script src="~/js/home.js"></script>
+<script src="~/js/contact.js"></script>
+<script src="~/js/jqbootstrapvalidation.min.js"></script>

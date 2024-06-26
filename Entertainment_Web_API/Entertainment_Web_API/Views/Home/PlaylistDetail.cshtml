@@ -1,0 +1,303 @@
+﻿@model BackEnd.Models.PlaylistViewModel
+
+@{
+    ViewData["Title"] = "PlaylistDetail";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="~/css/owl.carousel.min.css" rel="stylesheet" />
+<link href="~/css/stylehome.css" rel="stylesheet" />
+
+<div style="margin-top:15px">
+    <div class="col-sm-12">
+        <div class="bg-secondary rounded h-100 p-4">
+            <div class="row" style="background-image: linear-gradient(to bottom, #5c5858, #261515);padding:20px;border-radius:10px;">
+                <div class="col-3">
+                    <img class="img-fluid w-100" src="/lib/playlist_icon.jpg" alt="" style="width:280px;height:280px;border-radius:10px;">
+                </div>
+                <div class="col-9" style="margin-top:30px;">
+                    <h6 style="color: #e8d9d9;">Playlist</h6>
+                    <h1 style="font-size:92px;font-weight:700">Lofi beats</h1>
+                    <h6 style="color:#e8d9d9;">
+                        chill beats, lofi vibes, new tracks every week...
+                    </h6>
+                    <h5 style="color:#bebebe;"><i class="fa fa-headphones" aria-hidden="true"></i> 5.255.931 likes 750 songs, over 24 hours</h5>
+                </div>
+            </div>
+
+            <div class="container-fluid pt-5 pb-3">
+                <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Your videos</span></h2>
+                <div class="row px-xl-5">
+                    @foreach (var video in Model.Videos)
+                    {
+                        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                            <div class="product-item bg-light mb-4">
+                                <div class="product-img position-relative overflow-hidden">
+                                    <img class="img-fluid w-100" src="@video.ThumbnailUrl" alt="">
+                                    <div class="product-action">
+                                        <a class="btn btn-outline-dark btn-square" href="@Url.Action("Video", "Home", new { videoId = video.VideoId })"><i class="fa fa-play-circle"></i></a>
+                                    </div>
+                                </div>
+                                <div class="text-center py-4">
+                                    <a class="h6 text-decoration-none text-truncate" href="@Url.Action("Video", "Home", new { videoId = video.VideoId })">@video.Title</a>
+                                    <div class="ngang">
+                                        <i class="bi bi-clock"> @TimeAgo(video.VideoPostingTime.GetValueOrDefault())</i>
+                                        <i class="fa fa-eye" aria-hidden="true">  @video.VideoViews</i>
+                                        <div class="dropdown">
+                                            <i class="bi bi-three-dots-vertical ellipsis-icon"></i>
+                                            <div class="dropdown-content">
+                                                <i class="fa fa-trash" aria-hidden="true" style="margin-top:5px;" data-toggle="modal" data-target="#confirmDeleteModal-@video.VideoId"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal xác nhận xóa video khỏi playlist -->
+                        <div class="modal fade" id="confirmDeleteModal-@video.VideoId" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="confirmDeleteModalLabel" style="color: black;">Confirm deletion of video from playlist</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to remove this video from the playlist?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-danger" onclick="DeleteVideoFromPlaylist('@video.VideoId')">Yes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@functions {
+    string TimeAgo(DateTimeOffset dateTime)
+    {
+        var timeSpan = DateTimeOffset.Now - dateTime;
+
+        if (timeSpan <= TimeSpan.FromSeconds(60))
+        {
+            return $"{timeSpan.Seconds} second";
+        }
+        else if (timeSpan <= TimeSpan.FromMinutes(60))
+        {
+            return $"{timeSpan.Minutes} minute";
+        }
+        else if (timeSpan <= TimeSpan.FromHours(24))
+        {
+            return $"{timeSpan.Hours} hour";
+        }
+        else if (timeSpan <= TimeSpan.FromDays(30))
+        {
+            return $"{timeSpan.Days} day";
+        }
+        else if (timeSpan <= TimeSpan.FromDays(365))
+        {
+            return $"{Math.Round(timeSpan.Days / 30.0)} month";
+        }
+        else
+        {
+            return $"{Math.Round(timeSpan.Days / 365.0)} year";
+        }
+    }
+}
+
+<style>
+    i.bi-three-dots-vertical {
+        cursor: pointer;
+    }
+
+    .playlist-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-left: 10px; /* Adjust margin as needed */
+        display: flex;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 80px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        margin-left: 15px;
+        border-radius: 15px;
+        z-index: 0;
+    }
+
+
+
+        .dropdown-content:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown-content i {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+            .dropdown-content i:hover {
+                background-color: #ddd;
+            }
+
+    .text-center.py-4 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .text-decoration-none {
+        text-decoration: none !important;
+        word-wrap: break-word;
+        max-height: 51px !important;
+        text-overflow: ellipsis;
+    }
+
+    .ngang {
+        display: flex;
+    }
+
+    i.fa.fa-eye {
+        margin: 11px 12px;
+    }
+
+    i.bi.bi-clock {
+        margin: 7px 7px;
+    }
+
+    .product-action {
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    .product-img.position-relative.overflow-hidden {
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    .mee {
+        color: #fff;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    h1 {
+        color: #fff;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: -40px;
+        left: -70px; /* Adjust this value based on the width of your menu */
+        background-color: #f9f9f9;
+        min-width: 50px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+
+        .dropdown-content i {
+            padding: 8px 10px;
+            display: block;
+            text-align: center;
+        }
+
+    .show {
+        display: block;
+    }
+</style>
+
+<!-- Thêm jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    const kicks = document.querySelectorAll('.ellipsis-icon');
+    kicks.forEach(kick => {
+        kick.addEventListener('click', () => {
+            const dropdownContent = kick.nextElementSibling;
+
+            if (dropdownContent) {
+                dropdownContent.classList.toggle('show');
+            }
+        });
+    });
+</script>
+
+<!--Nút xử lý sự kiện đóng/mở modal xóa video trong ds phát-->
+<script>
+    //Xử lý sự kiện mở modal
+    $(document).ready(function () {
+        $("#confirmDeleteModal").on('show.bs.modal', function () {
+            $("#confirmDeleteModal").modal('show');
+        });
+    });
+
+    //Xử lý sự kiện đóng modal
+    $(document).ready(function () {
+        $("#confirmDeleteModal").on('hide.bs.modal', function () {
+            $("#confirmDeleteModal").modal('hide');
+        });
+    });
+</script>
+
+<!--Nút xóa video trong ds phát-->
+<script>
+    function DeleteVideoFromPlaylist(videoId) {
+        // Lấy URL hiện tại
+        const currentUrl = window.location.href;
+
+        // Tách chuỗi URL để lấy playlistId
+        const playlistId = currentUrl.split('=')[1];
+
+        $.ajax({
+            url: '/Playlist/DeleteVideoFromPlaylist',
+            type: 'DELETE',
+            data: {
+                playlistId: playlistId,
+                videoId: videoId
+            },
+            success: function (response) {
+                if (response.success) {
+                    alert('Playlist delete successfully!');
+                } else {
+                    alert('Delete playlist failed!');
+                }
+
+                // Đóng modal
+                $('#confirmDeleteModal').modal('hide');
+
+                // Làm mới trang
+                window.location.reload();
+            }
+        });
+    }
+</script>
+
+<script src="~/js/home.js"></script>
+<script src="~/js/contact.js"></script>
+<script src="~/js/jqbootstrapvalidation.min.js"></script>

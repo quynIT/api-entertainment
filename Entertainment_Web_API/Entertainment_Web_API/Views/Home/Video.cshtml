@@ -1,0 +1,1048 @@
+﻿@using System.Security.Claims
+@model BackEnd.Models.VideoViewModel
+
+@{
+    List<BackEnd.Models.Comment> commentlist = ViewBag.comments as List<BackEnd.Models.Comment>;
+    ViewData["Title"] = "Video";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-U5dnJlrXAnLNvELSnaQ9Y2RH/%43d3gImmQ7z/9nLh/X684tLwCq6C6XYQ/Q7z/p/n/7g1f6yBuq6/9lQj4jDDX/cQ%3D%3D" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+<div class="row g-0">
+    <div class="col-sm-6 col-md-8">
+        <iframe style="margin-top:50px;margin-left:8px;" width="97%" height="415" src="@Model.Video.VideoUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen allow="autoplay"></iframe>
+
+        <div class="row" style="margin-top:50px;margin-left:8px;">
+            <div class="col-6">
+                <h5 style="color:#6c7293">
+                    Views: @Model.Video.VideoViews
+                </h5>
+                <p>@Model.Video.Title</p>
+                <h3 style="color:#dbc9c9">
+                    Comments
+                </h3>
+            </div>
+            <div class="col-3">
+                <i id="like-button" class="fa fa-thumbs-up" aria-hidden="true" style="cursor: pointer;" data-video-id="@Model.Video.VideoId"> <span id="like-count">@Model.Video.Likes</span></i>
+                <i id="dislike-button" class="fa fa-thumbs-down" aria-hidden="true" style="margin-left:20px;" data-video-id="@Model.Video.VideoId"> <span id="dislike-count">@Model.Video.Dislikes</span></i>
+            </div>
+            <div class="col-3">
+                @* <i class="fa fa-download" aria-hidden="true">Download</i> *@
+                <!-- Nút Lưu vào danh sách phát -->
+                <i class="fa fa-play-circle" aria-hidden="true" data-toggle="modal" data-target="#saveToPlaylistModal"> Add to playlist</i>
+            </div>
+        </div>
+        <div class="comment-box">
+            <!-- Trường ẩn chứa videoId -->
+            <input type="hidden" id="videoId" name="videoId" value="@Model.Video.VideoId">
+            <textarea class="comment-input" id="commentContent" name="commentContent"></textarea>
+            <!-- button post-->
+            <button type="submit" class="submit-button" id="postComment">Post</button>
+        </div>
+
+        <div class="comment" style="padding-right: 30px;">
+            <div class="row g-0 margin-top:8px d-flex">
+                @if (Model.Comments != null)
+                {
+                    @foreach (var comment in Model.Comments)
+                    {
+                        <div class="col-12 d-flex" style="margin-top:15px;margin-left:15px;">
+                            <div class="d-flex" style="width:95%;">
+                                <img class="rounded-circle flex-shrink-0" src="/Uploads/@(comment.AppUser.Avtprofile ?? "avtmacdinh.jpg")" alt="" style="width: 40px; height: 40px;">
+                                <div class="block col-10" style="margin-left:20px;">
+                                    <h5 style="margin-top:3px; margin-left:5px;">@(comment.AppUser.FullName ?? "User")</h5>
+                                    <p style="margin-left:9px;">@comment.Content</p>
+
+                                    <!-- Like dislike phản hồi -->
+                                    <div style="display:flex">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true" style="cursor: pointer;margin-left:20px;"> 0</i>
+                                        <i class="fa fa-thumbs-down" aria-hidden="true" style="margin-left:20px;"></i>
+                                        <p style="cursor: pointer; margin-left:15px;" class="feedbackuser">Reply </p>
+                                    </div>
+
+                                    <!-- Người trả lời cmt -->
+                                    @if (comment.Replies != null)
+                                    {
+                                        <p style="cursor: pointer; margin-left:50px;" class="feedback"><i class="bi bi-chevron-bar-down"></i>@comment.Replies.Count replies </p>
+                                        foreach (var reply in comment.Replies)
+                                        {
+                                            <div class="sophanhoi" style="display:none;">
+                                                <div style="display:flex">
+                                                    <img class="rounded-circle flex-shrink-0" src="/Uploads/@(reply.AppUser.Avtprofile ?? "avtmacdinh.jpg" )" alt="" style="width: 40px; height: 40px;">
+                                                    <div class="block col-11" style="margin-left:20px;">
+                                                        <h5 style="margin-top:3px; margin-left:5px;">@(reply.AppUser.FullName ?? "User")</h5>
+                                                        <p style="margin-left:9px;">@reply.ReplyContent</p>
+
+                                                        <!--Edit phản hồi phụ-->
+                                                        <div class="commentanfeedback" style="display:none;">
+                                                            <textarea class="comment-input thap" id="editSubContent-@reply.ReplyId" name="editSubContent">@reply.ReplyContent</textarea>
+                                                            <button type="submit" class="submit-button editcmtfeedback" id="updateSubComment-@reply.ReplyId" onclick="EditSubComment('@reply.ReplyId')">Edit</button>
+                                                            <button class="submit-button cancelcmtfeedback" style="background-color:#e37272">Cancel</button>
+                                                        </div>
+
+                                                        <div style="display:flex">
+                                                            <i class="fa fa-thumbs-up" aria-hidden="true" style="cursor: pointer;margin-left:20px;"> 0</i>
+                                                            <i class="fa fa-thumbs-down" aria-hidden="true" style="margin-left:20px;"></i>
+                                                            <p style="cursor: pointer; margin-left:15px;">Reply </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-1 justify-content-start">
+                                                        <small style="margin-left:13px;">@comment.CommentPostingTime</small>
+                                                        @if (reply.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                                                        {
+                                                            <i class="bi bi-three-dots-vertical ellipsis-icon hienedit" style="margin-left: 40px !important;"></i>
+                                                            <div class="ngang" style="margin-top: -40px; margin-left: 13px; display:none;">
+                                                                <button class="editfeed" style="border-radius:13px;cursor:pointer;position: absolute;">
+                                                                    <div class="d-flex clsss">
+                                                                        <i class="bi bi-pencil-square " style="padding:3px;cursor:pointer;"></i>
+                                                                    </div>
+                                                                </button>
+
+                                                                <button type="submit" class="" style="border-radius:13px;cursor:pointer;position: absolute;margin-top: 37px;" data-toggle="modal" data-target="#confirmDeleteSubModal-@reply.ReplyId">
+                                                                    <div class="d-flex clsss">
+                                                                        <i class="fa fa-trash" aria-hidden="true" style="padding: 7px 4px;cursor:pointer;"></i>
+                                                                    </div>
+                                                                </button>
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal xác nhận xóa comment phụ-->
+                                            <div class="modal fade" id="confirmDeleteSubModal-@reply.ReplyId" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="confirmDeleteModalLabel" style="color: black;">Confirm deletion of comment</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Are you sure you want to delete this comment?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                            <button type="button" class="btn btn-danger" onclick="DeleteComment('@reply.ReplyId')">Yes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+
+                                <div class="cmtfeedback">
+                                    <textarea class="comment-input feed" id="replyContent-@comment.CommentId" name="replyContent"></textarea>
+                                    <button type="submit" class="submit-button btnan" id="replyComment-@comment.CommentId" onclick="ReplyComment('@comment.CommentId')">Reply</button>
+                                    <button class="submit-button huyfeedback" style="background-color:#e37272">Cancel</button>
+                                </div>
+
+                                <!--Edit bình luận gốc-->
+                                <div class="commentan">
+                                    <textarea class="comment-input cao" id="content-@comment.CommentId" name="commentContentMain">@comment.Content</textarea>
+                                    <button type="submit" class="submit-button btnan" id="updateComment-@comment.CommentId" onclick="EditComment('@comment.CommentId')">Edit</button>
+                                    <button class="submit-button btnhuy" style="background-color:#e37272">Cancel</button>
+                                </div>
+
+                                <div class="col-1 justify-content-start">
+                                    <small style="margin-left:20px;">@comment.CommentPostingTime</small>
+                                    @if (comment.Id == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                                    {
+                                        <i class="bi bi-three-dots-vertical ellipsis-icon hien"></i>
+                                        <div class="dropdown-content" style="margin-top: -40px; margin-left: 13px; display:none;">
+                                            @* Button update comment *@
+                                            <button type="submit" class="editButton" style="border-radius:13px;">
+                                                <div class="d-flex clsss">
+                                                    <i class="bi bi-pencil-square" style="padding:3px;"></i>
+                                                </div>
+                                            </button>
+
+                                            @* Button delete comment *@
+                                            <button type="submit" class="deleteButton" style="border-radius:13px;" data-toggle="modal" data-target="#confirmDeleteModal-@comment.CommentId">
+                                                <div class="d-flex clsss">
+                                                    <i class="fa fa-trash" aria-hidden="true" style="padding: 7px 4px;"></i>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal xác nhận xóa comment gốc-->
+                        <div class="modal fade" id="confirmDeleteModal-@comment.CommentId" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="confirmDeleteModalLabel" style="color: black;">Confirm deletion of comment</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to delete this comment?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-danger" onclick="DeleteMainComment('@comment.CommentId')">Yes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <!--Tab phải các video liên quan tới video hiện tại-->
+    <div class="col-6 col-md-4">
+        <div class="product__sidebar__comment">
+            <div class="section-title" style="margin-top:30px;">
+                <h5>Relate videos</h5>
+            </div>
+            @if (ViewBag.RelatedVideos != null)
+            {
+                @foreach (var relatedVideo in ViewBag.RelatedVideos)
+                {
+                    <div class="product__sidebar__comment__item">
+                        <div class="product__sidebar__comment__item__pic">
+                            <a href="@Url.Action("Video", "Home", new { videoId = relatedVideo.VideoId })">
+                                <img style="width:90px;height:100px;border-radius:15px;" src="@relatedVideo.ThumbnailUrl" alt="">
+                            </a>
+                        </div>
+                        <div class="product__sidebar__comment__item__text">
+                            <h5><a href="@Url.Action("Video", "Home", new { videoId = relatedVideo.VideoId })">@relatedVideo.Title</a></h5>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Modal hiện các playlist và để tạo playlist mới-->
+<div class="modal fade" id="saveToPlaylistModal" tabindex="-1" role="dialog" aria-labelledby="saveToPlaylistModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="saveToPlaylistModalLabel" style="color: black">Save in playlist</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Danh sách các playlist hiện có -->
+                @if (Model.Playlists != null)
+                {
+                    foreach (var playlist in Model.Playlists)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="playlist" value="@playlist.PlaylistId" id="@playlist.PlaylistId">
+                            <label class="form-check-label" for="@playlist.PlaylistId">@playlist.PlaylistName</label>
+                        </div>
+                    }
+                }
+
+                <!-- Form để thêm playlist mới -->
+                <form id="newPlaylistForm">
+                    <div class="form-group">
+                        <label for="newPlaylistName">New playlist name</label>
+                        <input type="text" class="form-control" id="playlistName" name="playlistName" placeholder="Enter new playlist name">
+                    </div>
+                    <!-- Trường ẩn chứa videoId -->
+                    <input type="hidden" id="videoId" name="videoId" value="@Model.Video.VideoId">
+                    <button type="button" class="btn btn-primary" style="margin-top: 5px;" id="addNewPlaylistButton">Add new playlist</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveChangesButton">Save the chosen playlist</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .editcmtfeedback {
+        margin-right: 100px !important;
+    }
+
+    .commentanfeedback {
+        position: relative;
+    }
+
+    .comment-box {
+        width: 100%;
+        height: 70px;
+        position: relative;
+        margin-left: 10px;
+    }
+
+    .comment-input {
+        width: calc(95% - 100px);
+        height: 70%;
+        padding-top: 0.5px;
+        height: 55px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .cao {
+        height: 35px !important;
+    }
+
+    .feed {
+        height: 35px !important;
+    }
+
+    .comment-box {
+        margin-bottom: 10px;
+    }
+
+    .submit-button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 90px;
+        height: 39px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 17px;
+        margin-right: 30px !important;
+        margin-bottom: 10px;
+    }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+
+    i.fa.fa-thumbs-up {
+        cursor: pointer;
+    }
+
+    i.fa.fa-thumbs-down {
+        cursor: pointer;
+    }
+
+    i.fa.fa-play-circle {
+        cursor: pointer;
+    }
+
+    .product__sidebar__comment {
+        margin-bottom: 35px;
+    }
+
+    .product__sidebar__comment__item {
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .product__sidebar__comment__item__pic {
+        float: left;
+        margin-right: 15px;
+    }
+
+    .product__sidebar__comment__item__text {
+        overflow: hidden;
+    }
+
+        .product__sidebar__comment__item__text ul {
+            margin-bottom: 10px;
+        }
+
+            .product__sidebar__comment__item__text ul li {
+                list-style: none;
+                font-size: 10px;
+                color: #ffffff;
+                font-weight: 700;
+                padding: 1px 10px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50px;
+                display: inline-block;
+            }
+
+        .product__sidebar__comment__item__text h5 {
+            margin-bottom: 10px;
+        }
+
+            .product__sidebar__comment__item__text h5 a {
+                color: #ffffff;
+                font-weight: 700;
+                line-height: 26px;
+            }
+
+        .product__sidebar__comment__item__text span {
+            display: block;
+            font-size: 13px;
+            color: #b7b7b7;
+        }
+
+    .mee {
+        color: #fff;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .commentan {
+        display: none;
+        position: absolute;
+        width: 40%;
+        margin-left: 67px;
+        margin-top: 15px;
+    }
+
+    .cmtfeedback {
+        display: none;
+        position: absolute;
+        width: 40%;
+        margin-left: 67px;
+        margin-top: 94px;
+    }
+
+    .an {
+        display: none;
+    }
+
+    .btnan {
+        top: 4px !important;
+    }
+
+    .btnhuy {
+        top: 60px !important;
+        left: 481px;
+    }
+
+    .huyfeedback {
+        top: 4px !important;
+        left: 600px;
+    }
+
+    .comments {
+        display: none;
+        margin-left: 50px;
+    }
+
+    p.feedbackuser {
+        margin-top: -5px;
+    }
+
+    .thap {
+        position: absolute;
+        z-index: 1;
+        margin-top: -37px;
+        height: 36px !important;
+        top: -10px;
+        margin-left: 9px;
+    }
+
+    .editcmtfeedback {
+        left: 450px;
+    }
+
+    .cancelcmtfeedback {
+        left: 450px;
+        top: -6px;
+    }
+
+    i.bi.bi-three-dots-vertical.ellipsis-icon {
+        margin-left: 50px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .bg-secondary {
+        background-color: #121212 !important;
+    }
+
+    .text-primary {
+        color: #EB1616 !important;
+    }
+
+    .text-uppercase {
+        text-transform: uppercase !important;
+    }
+
+    .h1, h2, h3, h5 {
+        font-weight: 700 !important;
+    }
+
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+        font-family: "Roboto", sans-serif !important;
+        font-weight: 700;
+    }
+
+    p {
+        color: #6c7293 !important;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    i {
+        color: #6c7293;
+    }
+
+    h5 {
+        font-weight: 700;
+    }
+
+    small {
+        color: #6c7293 !important;
+    }
+
+    i.fa.fa-film.me-2 {
+        color: red !important;
+    }
+
+    li {
+        color: #6c7293 !important;
+    }
+
+    a.btn.btn-lg.btn-primary.btn-lg-square.back-to-top {
+        background-color: red;
+        border-color: red;
+        border-radius: 25px;
+    }
+
+    .product__sidebar__comment__item__text {
+        margin-top: 20px;
+    }
+</style>
+
+<!-- Thêm jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<!--Nút xử lý sự kiện đóng/mở modal-->
+<script>
+    //Xử lý sự kiện mở modal
+    $(document).ready(function () {
+        $("#saveToPlaylistButton").on('show.bs.modal', function () {
+            $("#saveToPlaylistModal").modal('show');
+        });
+    });
+
+    //Xử lý sự kiện đóng modal
+    $(document).ready(function () {
+        $("#saveToPlaylistButton").on('show.bs.modal', function () {
+            $("#saveToPlaylistModal").modal('hide');
+        });
+    });
+</script>
+
+<!--Nút thêm video vào ds phát-->
+<script>
+    $(document).ready(function () {
+        // Khi người dùng nhấn nút "Lưu thay đổi"
+        $('#saveChangesButton').click(function () {
+            var videoId = $('#videoId').val();
+
+            // Lấy tất cả các radio button được chọn
+            var selectedPlaylistId = $('.form-check-input:checked').val();
+
+            // Gọi action AddVideoToPlaylist với videoId và playlistId
+            $.ajax({
+                url: '/Playlist/AddVideoToPlaylist', // URL của action trong HomeController
+                type: 'POST',
+                data: {
+                    playlistId: selectedPlaylistId,
+                    videoId: videoId
+                },
+                success: function (response) {
+                    if (response.success) {
+                        alert('Added video to playlist successfully!');
+                    } else {
+                        alert('Video already exists in the playlist!');
+                    }
+
+                    // Đóng modal
+                    $('#saveToPlaylistModal').modal('hide');
+
+                    // Làm mới trang
+                    window.location.reload();
+                }
+            });
+        });
+    });
+</script>
+
+<!--Nút thêm ds phát-->
+<script>
+    $(document).ready(function () {
+        // Khi người dùng nhấn nút "Add new playlist"
+        $('#addNewPlaylistButton').click(function () {
+            var videoId = $('#videoId').val();
+            var playlistName = $('#playlistName').val();
+
+            $.ajax({
+                url: '/Playlist/CreatePlaylist',
+                type: 'POST',
+                data: {
+                    videoId: videoId,
+                    playlistName: playlistName
+                },
+                success: function (response) {
+                    if (response.success) {
+                        alert('Playlist added successfully!');
+                        // Đóng modal
+                        $('#saveToPlaylistModal').modal('hide');
+
+                        // Làm mới trang
+                        window.location.reload();
+                    } else {
+                        // Hiển thị thông báo lỗi từ server
+                        alert(response.message);
+                        // Đóng modal
+                        $('#saveToPlaylistModal').modal('hide');
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<!--Nút đăng bình luận-->
+<script>
+    $(document).ready(function () {
+        // Khi người dùng nhấn nút "Post comment"
+        $('#postComment').click(function () {
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "showDuration": "200",
+                "hideDuration": "700",
+                "timeOut": "2000",
+                "extendedTimeOut": "700",
+                "onHidden": function () {
+                    var videoId = $('#videoId').val();
+                    var commentContent = $('#commentContent').val();
+
+                    $.ajax({
+                        url: '/Comment/AddComment',
+                        type: 'POST',
+                        data: {
+                            videoId: videoId,
+                            commentContent: commentContent
+                        },
+                        success: function (response) {
+                            if (response.success) {
+                                // Làm mới trang
+                                window.location.reload();
+                            } else {
+                                alert('Adding comment failed!');
+                            }
+                        }
+                    });
+                }
+            };
+
+            toastr.success("Posted successfully!", "Post comment");
+        });
+    });
+</script>
+
+<!--Nút chỉnh sửa bình luận-->
+<script>
+    function EditComment(commentId) {
+        // Disable button to prevent multiple clicks
+        $(`#updateComment-${commentId}`).prop('disabled', true);
+
+        var commentContent = $(`#content-${commentId}`).val();
+
+        $.ajax({
+            url: '/Comment/UpdateComment',
+            type: 'PUT',
+            data: {
+                commentId: commentId,
+                commentContent: commentContent
+            },
+            success: function (response) {
+                if (response.success) {
+                    toastr.options = {
+                        "closeButton": true,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": true,
+                        "positionClass": "toast-top-right",
+                        "showDuration": 200,
+                        "hideDuration": 800,
+                        "timeOut": 2000,
+                        "extendedTimeOut": 600,
+                        "onHidden": function () {
+                            window.location.reload();
+                        }
+                    };
+                    toastr.success("Edited successfully!", "Edit comment");
+                } else {
+                    alert('Edit comment failed!');
+                }
+
+                // Re-enable button after request completes (inside success or error callback)
+                $(`#updateComment-${commentId}`).prop('disabled', false);
+            },
+            error: function (error) {
+                console.error("Error updating comment:", error);
+                alert('Edit comment failed!');
+                $(`#updateComment-${commentId}`).prop('disabled', false);
+            }
+        });
+
+    }
+</script>
+
+<!--Nút xóa bình luận gốc-->
+<script>
+    function DeleteMainComment(commentId) {
+        $.ajax({
+            url: '/Comment/DeleteComment',
+            type: 'DELETE',
+            data: {
+                commentId: commentId
+            },
+            success: function (response) {
+                if (response.success) {
+                    // Làm mới trang
+                    window.location.reload();
+                } else {
+                    // Làm mới trang
+                    window.location.reload();
+                }
+
+                // Đóng modal
+                $(`#confirmDeleteModal-${commentId}`).modal('hide');
+            }
+        });
+    }
+</script>
+
+<!--Nút phản hồi bình luận-->
+<script>
+    function ReplyComment(commentId) {
+        var replyContent = $(`#replyContent-${commentId}`).val();
+        $.ajax({
+            url: '/ReplyComment/AddReplyComment',
+            type: 'POST',
+            data: {
+                commentId: commentId,
+                content: replyContent
+            },
+            success: function (response) {
+                if (response.success) {
+                    toastr.options = {
+                        "closeButton": true,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": true,
+                        "positionClass": "toast-top-right",
+                        "showDuration": 200,
+                        "hideDuration": 800,
+                        "timeOut": 2000,
+                        "extendedTimeOut": 600,
+                        "onHidden": function () {
+                            window.location.reload();
+                        }
+                    };
+                    toastr.success("Comment reply successful!", "Reply comment");
+                } else {
+                    alert('Replying comment failed!');
+                }
+            }
+        });
+    }
+</script>
+
+<!--Nút chỉnh sửa bình luận phụ-->
+<script>
+    function EditSubComment(replyId) {
+        $(`#updateSubComment-${replyId}`).click(function () {
+            var commentContent = $(`#editSubContent-${replyId}`).val();
+
+            $.ajax({
+                url: '/ReplyComment/UpdateReplyComment',
+                type: 'PUT',
+                data: {
+                    replyId: replyId,
+                    content: commentContent
+                },
+                success: function (response) {
+                    if (response.success) {
+                        toastr.options = {
+                            "closeButton": true,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": true,
+                            "positionClass": "toast-top-right",
+                            "showDuration": 200,
+                            "hideDuration": 800,
+                            "timeOut": 2000,
+                            "extendedTimeOut": 600,
+                            "onHidden": function () {
+                                window.location.reload();
+                            }
+                        };
+                        toastr.success("Edited successfully!", "Edit comment");
+                    } else {
+                        alert('Edit comment failed!');
+                    }
+                }
+
+            });
+        });
+    }
+</script>
+
+<!--Nút xóa bình luận phụ -->
+<script>
+    function DeleteComment(replyId) {
+        $.ajax({
+            url: '/ReplyComment/DeleteReplyComment',
+            type: 'DELETE',
+            data: {
+                replyId: replyId
+            },
+            success: function (response) {
+                if (response.success) {
+                    // Làm mới trang
+                    window.location.reload();
+                } else {
+                    // Làm mới trang
+                    window.location.reload();
+                }
+
+                // Đóng modal
+                $(`#confirmDeleteSubModal-${replyId}`).modal('hide');
+            }
+        });
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        var isLiked = false;
+        var isDisliked = false;
+        var videoId = $("#like-button").data("video-id"); // Lấy videoId từ thuộc tính data-video-id
+        var videoId1 = $("#dislike-button").data("video-id"); // Lấy videoId từ thuộc tính data-video-id
+
+        // Kiểm tra xem người dùng đã like video này chưa
+        $.ajax({
+            url: '/Home/CheckLikeStatus',
+            type: 'GET',
+            data: {
+                videoId: videoId
+            },
+            success: function (response) {
+                if (response) {
+                    // Nếu người dùng đã like video này, đặt màu của nút like thành xanh dương
+                    $("#like-button").css('color', 'blue');
+                    isLiked = true; // Cập nhật trạng thái nút like
+                }
+            }
+        });
+
+        // Kiểm tra xem người dùng đã dislike video này chưa
+        $.ajax({
+            url: '/Home/CheckDislikeStatus',
+            type: 'GET',
+            data: {
+                videoId: videoId1
+            },
+            success: function (response) {
+                if (response) {
+                    // Nếu người dùng đã dislike video này, đặt màu của nút dislike thành đỏ
+                    $("#dislike-button").css('color', 'red');
+                    isDisliked = true; // Cập nhật trạng thái nút dislike
+                }
+            }
+        });
+
+        $("#like-button").click(function () {
+            if (!isLiked) { // Chỉ thực hiện khi nút like chưa được nhấn
+                $.ajax({
+                    url: '/Home/LikeVideo',
+                    type: 'GET',
+                    data: {
+                        videoId: videoId
+                    },
+                    success: function (response) {
+                        // Cập nhật số lượt like trên UI
+                        var likes = " " + response;
+                        $("#like-count").text(likes);
+                        $("#like-button").css('color', 'blue'); // Thay đổi màu của nút like thành xanh dương
+                        isLiked = true; // Cập nhật trạng thái nút like
+                        if (isDisliked) { // Nếu nút dislike đã được nhấn, giảm số lượt dislike
+                            $.ajax({
+                                url: '/Home/UndoDislikeVideo',
+                                type: 'GET',
+                                data: {
+                                    videoId: videoId
+                                },
+                                success: function (response) {
+                                    // Cập nhật số lượt dislike trên UI
+                                    var dislikes = " " + response;
+                                    $("#dislike-count").text(dislikes);
+                                    $("#dislike-button").css('color', ''); // Đặt lại màu của nút dislike
+                                    isDisliked = false; // Đặt lại trạng thái nút dislike
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        });
+
+        $("#dislike-button").click(function () {
+            if (!isDisliked) { // Chỉ thực hiện khi nút dislike chưa được nhấn
+                $.ajax({
+                    url: '/Home/DislikeVideo',
+                    type: 'GET',
+                    data: {
+                        videoId: videoId1
+                    },
+                    success: function (response) {
+                        // Cập nhật số lượt dislike trên UI
+                        var dislikes = " " + response;
+                        $("#dislike-count").text(dislikes);
+                        $("#dislike-button").css('color', 'red'); // Thay đổi màu của nút dislike thành màu đỏ
+                        isDisliked = true; // Cập nhật trạng thái nút dislike
+                        if (isLiked) { // Nếu nút like đã được nhấn, giảm số lượt like
+                            $.ajax({
+                                url: '/Home/UndoLikeVideo',
+                                type: 'GET',
+                                data: {
+                                    videoId: videoId1
+                                },
+                                success: function (response) {
+                                    // Cập nhật số lượt like trên UI
+                                    var likes = " " + response;
+                                    $("#like-count").text(likes);
+                                    $("#like-button").css('color', ''); // Đặt lại màu của nút like
+                                    isLiked = false; // Đặt lại trạng thái nút like
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+<script>
+    document.querySelectorAll(".hien").forEach((hien, index) => {
+        hien.addEventListener("click", () => {
+            const dropdown = document.querySelectorAll(".dropdown-content")[index];
+            if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                dropdown.style.display = "block";
+            } else {
+                dropdown.style.display = "none";
+            }
+        });
+    });
+</script>
+
+<script>
+    document.querySelectorAll(".hienedit").forEach((hienedit, index) => {
+        hienedit.addEventListener("click", () => {
+            const dropdown = document.querySelectorAll(".ngang")[index];
+            if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                dropdown.style.display = "block";
+            } else {
+                dropdown.style.display = "none";
+            }
+        });
+    });
+</script>
+
+<script>
+    document.querySelectorAll(".editfeed").forEach((editfeed, index) => {
+        editfeed.addEventListener("click", () => {
+            const dropdown = document.querySelectorAll(".commentanfeedback")[index];
+            if (dropdown.style.display === "none" || dropdown.style.display === "") {
+                dropdown.style.display = "block";
+            }
+        });
+    });
+    document.querySelectorAll(".cancelcmtfeedback").forEach((cancelcmtfeedback, index) => {
+        cancelcmtfeedback.addEventListener("click", () => {
+            const dropdown = document.querySelectorAll(".commentanfeedback")[index];
+            if (dropdown.style.display === "block" || dropdown.style.display === "") {
+                dropdown.style.display = "none";
+            }
+        });
+    });
+</script>
+
+<script>
+    const editButtons = document.querySelectorAll(".editButton");
+    const editedCommentInputs = document.querySelectorAll(".commentan");
+    editButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            editedCommentInputs[index].style.display = "block"; // Hiển thị ô văn bản chỉnh sửa
+        });
+        button.addEventListener("click", () => {
+            edited[index].style.display = "none"; // Hiển thị ô văn bản chỉnh sửa
+        });
+    });
+</script>
+
+<script>
+    const feedButtons = document.querySelectorAll(".feedbackuser");
+    const feedCommentInputs = document.querySelectorAll(".cmtfeedback");
+    const cancelButton = document.querySelectorAll(".huyfeedback");
+    feedButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            feedCommentInputs[index].style.display = "block"; // Hiển thị ô văn bản chỉnh sửa
+        });
+    });
+    cancelButton.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            feedCommentInputs[index].style.display = "none"; // Hiển thị ô văn bản chỉnh sửa
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Chọn tất cả các nút "Hủy"
+        var cancelButtons = document.querySelectorAll(".btnhuy");
+
+        // Thêm sự kiện click cho mỗi nút "Hủy"
+        cancelButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                this.closest(".commentan").style.display = "none";
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('.feedback').click(function () {
+            $(this).closest('.block').find('.sophanhoi').toggle();
+        });
+    });
+</script>
